@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FrutaComponent } from './fruta/fruta.component';
-import { ListadoClaseComponent } from './listado-clase/listado-clase.component';
-import { FlujoInformacionComponent } from './flujo-informacion/flujo-informacion.component';
+import { FrutaComponent } from './components/fruta/fruta.component';
+import { ListadoClaseComponent } from './components/listado-clase/listado-clase.component';
+import { FlujoInformacionComponent } from './components/flujo-informacion/flujo-informacion.component';
 import { HomeComponent } from './components/home/home.component';
 import { Page404Component } from './components/page404/page404.component';
 
