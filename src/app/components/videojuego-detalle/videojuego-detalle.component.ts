@@ -9,40 +9,42 @@ import { tipopersona } from '../../model/tipopersona';
   styleUrls: ['./videojuego-detalle.component.scss']
 })
 export class VideojuegoDetalleComponent implements OnInit {
-  titulo:string;
-  videojuego:Videojuego;
-  personadefecto:Persona;
-  yo:Persona;
-  valeria:Persona;
-  
-  constructor() { 
+  titulo: string;
+  videojuego: Videojuego;
+  personas: Persona[];
+
+  constructor() {
     console.trace("VideojuegoDetalleComponent constructor");
-    this.titulo="Aprendiendo a usar Clases";
-    this.videojuego=new Videojuego();
+    this.titulo = "Aprendiendo a usar Clases";
+    this.videojuego = new Videojuego();   
 
     //LLamamos al setter siempre qu eesté definido:
-    this.videojuego.titulo="Mario Bross";
-    
-    //Ejercicio persona
-    this.personadefecto=new Persona();   
-
-    this.yo=new Persona();
-    this.yo.nombre="Andrea";
-    this.yo.apellidos="Perez Millan";
-    this.yo.edad=0;
-    this.yo.email="andrea@hotm.com";
-    this.yo.sexo=tipopersona.F;
-
-
-    this.valeria=new Persona();
-    this.valeria=new Persona();
-    this.valeria.nombre="Valeria";
-    this.valeria.apellidos="Valencia";
-    this.yo.edad=0;
-    this.yo.email="valeria@hotm.com";
-    this.yo.sexo=tipopersona.F;
+    this.videojuego.titulo = "Mario Bross";
+    this.personas = [];
+    this.loadPersonas();
   }
 
+  //Ejercicio persona
+  loadPersonas(): void {
+    let p: Persona = new Persona();
+    this.personas.push(p);
+    p = new Persona();
+
+    p.nombre = "Andrea";
+    p.apellidos = "Perez Millan";
+    p.edad = 0;
+    p.email = "andrea@hotm.com";
+    p.sexo = tipopersona.F;
+    this.personas.push(p);
+    
+    p = new Persona();
+    p.nombre = "Valeria";
+    p.apellidos = "Valencia";
+    p.edad = 0;
+    p.email = "valeria@hotm.com";
+    p.sexo = tipopersona.F;
+    this.personas.push(p);
+  }
   ngOnInit() {
     console.trace("VideojuegoDetalleComponent init");
   }
