@@ -10,6 +10,8 @@ import { FlujoInformacionComponent } from './components/flujo-informacion/flujo-
 import { HomeComponent } from './components/home/home.component';
 import { Page404Component } from './components/page404/page404.component';
 import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
+import { PipeComponent } from './components/pipe/pipe.component';
+import { VideojuegoPipe } from './pipes/videojuego.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { VideojuegoDetalleComponent } from './components/videojuego-detalle/vide
     FlujoInformacionComponent,
     HomeComponent,
     Page404Component,
-    VideojuegoDetalleComponent
+    VideojuegoDetalleComponent,
+    PipeComponent,
+    VideojuegoPipe
   ],
   imports: [
     BrowserModule,
