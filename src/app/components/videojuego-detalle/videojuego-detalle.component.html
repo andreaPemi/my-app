@@ -12,7 +12,6 @@
     <p>Usamos el
       <b> pipe Json</b> para mostrar el objeto,siempre para depurar</p>
     {{videojuego | json}}
-    <hr>
     <p>Sin usar pipe json</p>
     {{videojuego}}
   </div>
@@ -34,17 +33,10 @@
   </div>
 </div>
 <hr>
-<h3>Detalle de personas</h3>
 <div class="row">
-
-  <div class="col">
-    <h3>Por defecto</h3>
-  </div>
   <h3 class="d-flex justify-content-center">MOSTRAR TODAS LAS PERSONAS</h3>
   <div class="row">
     <div class="col">
-      {{personas | json}}
-
       <h4>Listado de Personas</h4>
       <ol>
         <li *ngFor="let p of personas">{{p.nombre}}</li>
@@ -52,15 +44,15 @@
     </div>
     <div class="col">
       <h4 class="text-danger">Listado de personas Masculinas</h4>
-      <li *ngFor="let p of personas |  sexo:'Masculino'">{{p.nombre}</li>
+      <li *ngFor="let p of personas |  sexo:'Masculino'">{{p.nombre}}-{{p.sexo}}</li>
     </div>
     <div class="col">
       <h4 class="text-success">Listado de personas Femeninas</h4>
-      <li *ngFor="let p of personas | sexo:'Femenino'">{{p.nombre}</li>
+      <li *ngFor="let p of personas | sexo:'Femenino'">{{p.nombre}}-{{p.sexo}}</li>
     </div>
     <div class="col">
-        <h4 class="text-warning">Listado de personas Indefinidas</h4>
-        <li *ngFor="let p of personas | sexo:'Indefinido'">{{p.nombre}</li>
+      <h4 class="text-warning">Listado de personas Indefinidas</h4>
+      <li *ngFor="let p of personas | sexo:'Indefinido'">{{p.nombre}}-{{p.sexo}}</li>
     </div>
   </div>
 </div>
