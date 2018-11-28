@@ -9,6 +9,7 @@ import { ListadoClaseComponent } from './components/listado-clase/listado-clase.
 import { FlujoInformacionComponent } from './components/flujo-informacion/flujo-informacion.component';
 import { HomeComponent } from './components/home/home.component';
 import { Page404Component } from './components/page404/page404.component';
+import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { Page404Component } from './components/page404/page404.component';
     ListadoClaseComponent,
     FlujoInformacionComponent,
     HomeComponent,
-    Page404Component
+    Page404Component,
+    VideojuegoDetalleComponent
   ],
   imports: [
     BrowserModule,
