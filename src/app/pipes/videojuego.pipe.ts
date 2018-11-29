@@ -12,13 +12,15 @@ export class VideojuegoPipe implements PipeTransform {
     console.debug("VideojuegoPipePipe transform");
     let resul:Videojuego[]=[];
 
-    videojuegos.forEach(v => {
-      if(v.alquilado===alquilado){
-        resul.push(v);
-      }
-    });
-    
-    return resul;
+    /*Primera forma de hacerlo
+      videojuegos.forEach(v => {
+        if(v.alquilado===alquilado){
+          resul.push(v);
+        }
+      })
+      return resul;
+    */
+    return videojuegos.filter(v=>v.alquilado===alquilado);
   }
 
 }

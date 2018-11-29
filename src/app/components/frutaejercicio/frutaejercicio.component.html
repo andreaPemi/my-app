@@ -1,0 +1,33 @@
+<div class="container">
+  <hr> 
+  <h1>EJERCICIO FRUTA</h1>
+  <p><a href="http://www.campus.formacion.ipartek.com/moodle/mod/page/view.php?id=1254">Documentacion Recorrer array </a></p>
+  <h4>Listado de Frutas</h4>
+ 
+  <div class="row">
+      <div class="col" *ngFor="let fr of frutas">
+        <app-fruta-card [_fruta]="fr"></app-fruta-card>
+      </div>
+    </div>
+  
+  <h2>guardar en una variable el precio total de todas las frutas</h2> 
+  <span>{{precioTotal}}</span>
+  <h2>conseseguir array solo con los "nombres"</h2>
+  <ol>
+    <li *ngFor="let fruta of nombresFrutas">
+      {{fruta}}
+    </li>
+  </ol>
+  <h2>conseguir array solo con las frutas en oferta</h2>
+  <ol>
+    <li *ngFor="let fruta of frutasOferta">
+      {{fruta.nombre}}
+    </li>
+  </ol>
+  <h2>conseguir array solo con las frutas de color rojo</h2>
+{{frutasRojas}}
+  <h2>conseguir primera fruta en oferta: <b>{{primerFrutaOferta.nombre}}</b></h2>
+
+  <h2>Conseguir primera fruta que este en oferta de color verde:<b>{{primerFrutaOfertaVerde.nombre}}</b></h2>
+  
+</div>
