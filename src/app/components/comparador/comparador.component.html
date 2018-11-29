@@ -1,0 +1,34 @@
+<div class="container">
+  <!-- {{frutas |json}}} -->  
+  <div class="row">
+    <div class="col col-3">
+      <ul class="list-group">
+        <h1 class="text-center">Listado frutas</h1>
+        <button *ngFor="let f of frutas" (click)="cargarFruta(f)" class="btn btn-outline-info">{{f.nombre}}</button>
+      </ul> 
+    </div>
+    <div class="col">
+      <h1 class ="text-center">COMPARADOR DE FRUTAS</h1>
+      <div class="card_fruta">
+        <div class="row">
+          <div class="col">
+            <app-fruta-card [_fruta]="f1"></app-fruta-card>
+          </div>
+          <div class="col" >
+            <app-fruta-card [_fruta]="f2"></app-fruta-card>
+          </div>
+        </div>  
+      </div>
+    </div>  
+  </div>
+  <!--/row card-->
+
+  <div class="row">    
+    <select class="custom-select">
+        <option selected>Comparador</option>
+        <option value="calorias">Calorias</option>
+        <option value="precioMin">Más barato</option>
+        <option value="precioMax">Más caro</option>
+    </select>
+  </div>
+</div>

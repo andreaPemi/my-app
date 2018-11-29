@@ -2,34 +2,30 @@ import { Component, OnInit } from '@angular/core';
 import { Fruta } from '../../model/fruta';
 
 @Component({
-  selector: 'app-frutaejercicio',
-  templateUrl: './frutaejercicio.component.html',
-  styleUrls: ['./frutaejercicio.component.scss']
+  selector: 'app-comparador',
+  templateUrl: './comparador.component.html',
+  styleUrls: ['./comparador.component.scss']
 })
-export class FrutaejercicioComponent implements OnInit {
+export class ComparadorComponent implements OnInit {
+
   frutas:Fruta[];
-  precioTotal:number;
-  nombresFrutas:string[];
-  frutasOferta:Fruta[];
-  primerFrutaOferta:Fruta;
-  primerFrutaOfertaVerde:Fruta;
-  frutasRojas:Fruta[];
+  f1:Fruta;
+  f2:Fruta;
 
   constructor() {
-     console.trace("FrutaejercicioComponent constructor");
-     this.frutas = [];
-     this.loadFrutas();  
-     this.frutasRojas = this.frutas.filter(el => el.colores.find(c => c === 'Rojo'));   
-     this.nombresFrutas=this.frutas.map(el=>el.nombre);  
-     this.frutasOferta=this.frutas.filter(el=>el.oferta);
-     this.precioTotal= this.frutas.map(f=>f.precio).reduce( (p,c)=> p + c);
-     this.primerFrutaOferta = this.frutas.find( f => f.oferta );
-     this.primerFrutaOfertaVerde=this.frutas.filter( f => f.colores.find(c=>c==='verde') ).find(f=>f.oferta);
-     //this.frutaColorRojo
+    this.frutas = [];
+    this.f1=new Fruta();
+    this.f2=new Fruta();
+    this.loadFrutas();  
+    this.f1=this.frutas[0];
+    this.f2=this.frutas[1];
+
+
    }
 
   ngOnInit() {
   }
+
   loadFrutas():void{
     let f: Fruta = new Fruta(); 
 
@@ -68,5 +64,12 @@ export class FrutaejercicioComponent implements OnInit {
 
     
   }  
-  
+
+  cargarFruta(fruta:Fruta){
+    console.trace("click cargarFruta comparador",fruta);
+    
+    this.f2 = this.f1;
+    this.f1 = fruta;
+  }
+
 }
