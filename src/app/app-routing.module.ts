@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:'pipe', component:PipeComponent},
   {path:'fruta-ejercicio', component:FrutaejercicioComponent}, 
   {path:'comparador', component:ComparadorComponent},
-  {path:'tareas', component:TareaComponent},
+  {path:'tareas', component:TareaComponent},  
   {path:'',redirectTo: '/home', pathMatch: 'full'},
   {path:'**', component:Page404Component}
 ];
