@@ -4,11 +4,10 @@ export class Fruta {
     private _calorias: number;    
     private _colores: string[];    
     private _oferta: boolean;  
-    private _descuento: number;
-    
-    private _imagen: string;  
-    
-
+    private _descuento: number;    
+    private _imagen: string; 
+    private _cantidad: number;
+       
     constructor(){
         this.nombre="albaricoque";
         this.precio=0;
@@ -17,6 +16,7 @@ export class Fruta {
         this.oferta=false;
         this.descuento=10;
         this.imagen="assets/imgs/melocoton.jpg";
+        this.cantidad=1;
     }
     
     public get nombre(): string {
@@ -62,5 +62,12 @@ export class Fruta {
     }
     public set imagen(value: string) {
         this._imagen = value;
+    }
+
+    public get cantidad(): number {
+        return this._cantidad;
+    }
+    public set cantidad(value: number) {
+        this._cantidad = value;
     }
 }

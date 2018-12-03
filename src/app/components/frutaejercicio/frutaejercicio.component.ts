@@ -14,6 +14,7 @@ export class FrutaejercicioComponent implements OnInit {
   primerFrutaOferta:Fruta;
   primerFrutaOfertaVerde:Fruta;
   frutasRojas:Fruta[];
+  
 
   constructor() {
      console.trace("FrutaejercicioComponent constructor");
@@ -25,7 +26,7 @@ export class FrutaejercicioComponent implements OnInit {
      this.precioTotal= this.frutas.map(f=>f.precio).reduce( (p,c)=> p + c);
      this.primerFrutaOferta = this.frutas.find( f => f.oferta );
      this.primerFrutaOfertaVerde=this.frutas.filter( f => f.colores.find(c=>c==='verde') ).find(f=>f.oferta);
-     //this.frutaColorRojo
+     
    }
 
   ngOnInit() {
@@ -39,8 +40,9 @@ export class FrutaejercicioComponent implements OnInit {
     f.colores=["amarillo", "negro"],
     f.oferta= true;
     f.imagen="https://nutriliving-images.imgix.net/images/2014/335/12907/C07BEDA0-8F79-E411-A121-0287E8A1303A.jpg?ch=DPR&w=488&h=488&auto=compress,format&dpr=1";
-
+    f.cantidad=0;
     this.frutas.push(f);
+    
 
     f= new Fruta(); 
     f.nombre="pera";
@@ -49,6 +51,7 @@ export class FrutaejercicioComponent implements OnInit {
     f.colores=["amarillo", "verde"],
     f.oferta= false;
     f.imagen="http://www.haciendasbio.com/63-large_default/peras.jpg";
+    f.cantidad=0;
     this.frutas.push(f);
 
     f= new Fruta(); 
@@ -58,7 +61,7 @@ export class FrutaejercicioComponent implements OnInit {
     f.colores=["rosa", "rojo","verde"],
     f.oferta= true;
     f.imagen="http://libbys.es/wordpress/wp-content/uploads/2018/05/fresas.jpg"
-
+    f.cantidad=0; 
     this.frutas.push(f);
 
     

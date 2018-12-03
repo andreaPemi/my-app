@@ -1,34 +1,70 @@
 <div class="container">
-  <!-- {{frutas |json}}} -->  
+  <!-- {{frutas |json}}} -->
+  
   <div class="row">
-    <div class="col col-3">
-      <ul class="list-group">
-        <h1 class="text-center">Listado frutas</h1>
-        <button *ngFor="let f of frutas" (click)="cargarFruta(f)" class="btn btn-outline-info">{{f.nombre}}</button>
-      </ul> 
-    </div>
-    <div class="col">
-      <h1 class ="text-center">COMPARADOR DE FRUTAS</h1>
-      <div class="card_fruta">
-        <div class="row">
-          <div class="col">
-            <app-fruta-card [_fruta]="f1"></app-fruta-card>
-          </div>
-          <div class="col" >
-            <app-fruta-card [_fruta]="f2"></app-fruta-card>
-          </div>
-        </div>  
-      </div>
-    </div>  
+      <div class="col" >
+        <h3>Registrar Eventos @Output</h3>
+        <p>El componente padre puede recibir eventos del componente hijo</p>
+      </div>     
+
   </div>
-  <!--/row card-->
 
   <div class="row">    
-    <select class="custom-select">
-        <option selected>Comparador</option>
-        <option value="calorias">Calorias</option>
-        <option value="precioMin">Más barato</option>
-        <option value="precioMax">Más caro</option>
-    </select>
+    
+      <h1 class ="text-center">COMPARADOR DE FRUTAS</h1>
+      <div class="card_fruta">      
+
+        <div class="row">
+            <div class="col-3">
+                <ul class="list-group">
+                  <h1 class="text-center">Listado frutas</h1>
+                  <!--Se selecciona las 2 frutas a comparar-->
+                  <li *ngFor="let f of frutas" 
+                       (click)="cargarFruta(f)"
+                       class="list-group-item" 
+                       [class.active]="f == f1 || f == f2">{{f.nombre}}</li> 
+                </ul> 
+              </div>
+
+          <div class="col-3">
+            <app-fruta-card [_fruta]="f1" [_fruta2]="f2"(clickCompra)="actualizarCarro($event)"></app-fruta-card>
+          </div>
+          <div class="col-3" >
+            <app-fruta-card [_fruta]="f2" [_fruta2]="f1" (clickCompra)="actualizarCarro($event)"></app-fruta-card>
+          </div>          
+        
+          <div class="col-3"> 
+            <div class="card">
+                  <div class="card-header">
+                    <b> Compra  {{totalCompra | number:'1.2-2'}} €</b> 
+                  </div>
+                  <div class="card-body">
+                    <div  *ngFor="let p of productos, let i = index">
+                     <div class="row">
+                        <p (click)="eliminarProducto(p,i)" class="badge badge-danger float-right">X</p>
+                        <div class="col">
+                            <img class="card-img-top" src="{{p.imagen}}" alt="imagen producto">
+                            <button (click)="cantidadSuma(p,i)"><b>+</b></button>  
+                            <span>{{p.cantidad}}</span>   
+                            <button (click)="cantidadResta(p,i)"><b>-</b></button>
+                            
+                          </div>                                                  
+                     </div>
+
+                    </div>                       
+                  </div>
+
+                </div>
+
+
+          </div>
+        
+        </div> 
+        
+        
+
+      </div>
+     
   </div>
+  <!--/row card-->
 </div>

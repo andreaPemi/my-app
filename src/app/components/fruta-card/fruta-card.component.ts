@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 import { Fruta } from '../../model/fruta';
 
 @Component({
@@ -9,6 +9,8 @@ import { Fruta } from '../../model/fruta';
 export class FrutaCardComponent implements OnInit {
   
   _fruta: Fruta;
+  private _fruta2?: Fruta; // ?=opcional,puede llegar
+  
 
   public get fruta(): Fruta {
     return this._fruta;
@@ -22,6 +24,16 @@ export class FrutaCardComponent implements OnInit {
     }
     
   }
+
+  public get fruta2(): Fruta {
+    return this._fruta2;
+  }
+  @Input ('_fruta2')public set fruta2(value: Fruta) {
+    this._fruta2 = value;
+  }
+  
+  //registrar evento de salida
+  @Output() clickCompra=new EventEmitter();
 
   constructor() {
     console.trace('Constructor FrutaCardComponent');
@@ -39,9 +51,14 @@ export class FrutaCardComponent implements OnInit {
     console.trace('ngOnInit FrutaCardComponent');
   }
 
-  comprar(event: Event) {
+  comprar() {
     console.trace('Comprar de FrutaCardComponent');
-    alert(`Lo sentimos pero no tenemos esta opción habilidada ${this.fruta.nombre}`);
+    //alert(`Lo sentimos pero no tenemos esta opción habilidada ${this.fruta.nombre}`);
+   
+    //Emitimos el evento al componente padre  y enviamos parametro FrutaClick
+    this.clickCompra.emit({frutaClick:this.fruta});
   }
+
+ 
 
 }

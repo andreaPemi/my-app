@@ -1,3 +1,5 @@
+//Modulos de angular
+import {HttpClientModule} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -16,6 +18,14 @@ import { tipopersonaPipe } from './pipes/tipopersona.pipe';
 import { FrutaejercicioComponent } from './components/frutaejercicio/frutaejercicio.component';
 import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
 import { ComparadorComponent } from './components/comparador/comparador.component';
+import { TareaComponent } from './components/tarea/tarea.component';
+
+
+
+//Providers
+import { FrutaService } from './providers/fruta.service';
+import { TareaService } from './providers/tarea.service';
+
 
 
 @NgModule({
@@ -32,14 +42,20 @@ import { ComparadorComponent } from './components/comparador/comparador.componen
     tipopersonaPipe,   
     FrutaejercicioComponent,
     FrutaCardComponent,
-    ComparadorComponent
+    ComparadorComponent,
+    TareaComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule, // cargamos el módulo en el array de imports
   ],
-  providers: [],
+  providers: [
+    FrutaService,
+    TareaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
