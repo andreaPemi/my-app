@@ -4,4 +4,45 @@
 
 <ul class="list-group">
     <li class="list-group-item" *ngFor="let tarea of tareas">{{tarea | json}}</li>    
-  </ul>
+</ul>
+
+<hr>
+
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="tareas">TODAS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pendientes</a>
+      </li>           
+      <div class=" col align-self-end row justify-content-end">
+        <div class="col-4">
+          <input type="text" class="form-control" placeholder="Nombre tarea">
+        </div>
+        <div class="col-4">
+          <button class="btn btn-outline-primary" type="button" id="button-addon2">Crear Tarea</button>
+        </div>              
+      </div>                  
+    </ul>
+  </div>
+
+  <!-- Listado de tareas-->
+  <div class="card-body d-block" *ngFor="let tarea of tareas">
+    <div class="input-group-text align-items-center">
+      <div>
+        <input type="checkbox" value="{{tarea.titulo}}"name="{{tarea.id}}">
+      </div>      
+      <div>
+        <label for="male" class="ml-4 inline-block">{{tarea.titulo}}</label>              
+      </div>
+      <div>
+        <i (click)=eliminar(tarea) class=" popup text-danger far fa-trash-alt text-danger" title="eliminar"></i>
+      </div>
+    </div>   
+  </div>
+  <!-- End listado de tareas -->   
+
+</div>
+    

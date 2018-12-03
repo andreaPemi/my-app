@@ -27,4 +27,14 @@ export class TareaComponent implements OnInit {
 
   }
 
+  //Se elimina ,pero al actualizar vuelve a cargar , crear funcion en el service.
+  eliminar(t:Tarea){
+    alert(`Se va a eliminar la tarea " ${t.titulo} "de la lista`);
+    const index: number = this.tareas.indexOf(t);
+    if (index !== -1) {
+        this.tareas.splice(index, 1);
+    } 
+  }
+
+
 }
