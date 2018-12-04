@@ -10,31 +10,67 @@ import { Tarea } from 'src/app/model/tarea';
 export class TareaComponent implements OnInit {
 
   tareas: Tarea[];
+  nueva:string;
+  todas:boolean;
+  textoFiltro:string;
 
   constructor( public tareaService: TareaService ) {
     console.trace('TareaComponent constructor');
     this.tareas = [];
+    this.nueva="";
+    this.todas=true;
+    this.textoFiltro="Todas";
+
   }
 
   ngOnInit() {
     console.trace('TareaComponent ngOnInit');
     // llamar al servicio para carga inicial de las tareas, NO hacerlo en "constructor"
     // Como this.tareaService.getAll() retorna un Observable, debemos suscribirnos a el
+    this.recargarLista();
+
+  }
+
+  recargarLista(){
     this.tareaService.getAll().subscribe( data =>{
       console.debug('datos recibidos %o', data);
       this.tareas = data.map( el => el);
     });
+  }
+
+  nuevaTarea(){
+    console.log("Tarea: " +this.nueva);
+    let tarea =new Tarea();
+    tarea.titulo=this.nueva;
+    this.tareaService.add(tarea).subscribe(data=>{
+      console.log(data);
+      this.recargarLista();
+      this.nueva="";
+    });
+  }
+  
+  eliminar(id:number){
+    console.log(`tareacomponent eliminar : ${id}`);
+    this.tareaService.delete(id).subscribe(data=>{
+      console.log(data);
+      this.recargarLista();      
+    })
+    
+  }
+
+  terminar(tarea:Tarea){
+    console.log(`tareacomponent terminar : ${tarea.id}`);
+    this.tareaService.marcarTerminado(tarea).subscribe(data=>{
+      console.log(data);
+      this.recargarLista();      
+    })
 
   }
 
-  //Se elimina ,pero al actualizar vuelve a cargar , crear funcion en el service.
-  eliminar(t:Tarea){
-    alert(`Se va a eliminar la tarea " ${t.titulo} "de la lista`);
-    const index: number = this.tareas.indexOf(t);
-    if (index !== -1) {
-        this.tareas.splice(index, 1);
-    } 
+  filtrar(){    
+    this.todas=!this.todas;
+    console.trace("tareaComponent" + this.todas);
+    this.textoFiltro=(this.todas)?'Todas':'Pendientes';
   }
-
 
 }

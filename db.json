@@ -1,76 +1,88 @@
 {
-  "posts": [
+  "tareas": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "titulo": "5",
+      "terminado": false,
+      "id": 7
+    },
+    {
+      "titulo": "mirar angular 2 materia",
+      "terminado": false,
+      "id": 8
+    },
+    {
+      "titulo": "maquetar",
+      "terminado": false,
+      "id": 9
     }
   ],
-  "comments": [
+  "frutas": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "nombre": "banana",
+      "precio": 3.15,
+      "calorias": 500,
+      "colores": [
+        "amarillo",
+        "negro"
+      ],
+      "oferta": true,
+      "descuento": 20,
+      "imagen": "https://nutriliving-images.imgix.net/images/2014/335/12907/C07BEDA0-8F79-E411-A121-0287E8A1303A.jpg?ch=DPR&w=488&h=488&auto=compress,format&dpr=1",
+      "cantidad": 1
+    },
+    {
+      "nombre": "pera",
+      "precio": 2,
+      "calorias": 350,
+      "colores": [
+        "amarillo",
+        "verde"
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "imagen": "http://www.haciendasbio.com/63-large_default/peras.jpg",
+      "cantidad": 1
+    },
+    {
+      "nombre": "fresa",
+      "precio": 0.75,
+      "calorias": 100,
+      "colores": [
+        "rosa",
+        "rojo",
+        "verde"
+      ],
+      "oferta": true,
+      "descuento": 15,
+      "imagen": "http://libbys.es/wordpress/wp-content/uploads/2018/05/fresas.jpg",
+      "cantidad": 1
+    },
+    {
+      "nombre": "Kiwi",
+      "precio": 1.25,
+      "calorias": 100,
+      "colores": [
+        "amarillo",
+        "marron",
+        "verde"
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "imagen": "https://www.abc.es/media/familia/2018/04/03/kiwi-kC0--620x349@abc.jpg",
+      "cantidad": 1
+    },
+    {
+      "nombre": "Limon",
+      "precio": 0.8,
+      "calorias": 0.35,
+      "colores": [
+        "amarillo",
+        "verde"
+      ],
+      "oferta": true,
+      "descuento": 10,
+      "imagen": "https://www.hogarmania.com/archivos/201308/limon-xl-668x400x80xX.jpg",
+      "cantidad": 1
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
-  "tareas":[
-      {"id":1,"titulo":"cambiar Readme","terminado":false},
-      {"id":2,"titulo":"comparador","terminado":true},
-      {"id":1,"titulo":"Formulario Reactivos","terminado":false}
-  
-  ],
-  "frutas":[{
-		"nombre": "banana",
-		"precio": 3.15,
-		"calorias": 500,
-		"colores": ["amarillo", "negro"],
-		"oferta": true,
-		"descuento": 20,
-		"imagen":"https://nutriliving-images.imgix.net/images/2014/335/12907/C07BEDA0-8F79-E411-A121-0287E8A1303A.jpg?ch=DPR&w=488&h=488&auto=compress,format&dpr=1",
-		"cantidad": 1 
-	},
-	{
-		"nombre": "pera",
-		"precio": 2,
-		"calorias": 350,
-		"colores": ["amarillo", "verde"],
-		"oferta": false,
-		"descuento": 0,
-		"imagen": "http://www.haciendasbio.com/63-large_default/peras.jpg",
-		"cantidad": 1
-	},
-	{
-		"nombre": "fresa",
-		"precio": 0.75,
-		"calorias": 100,
-		"colores": ["rosa", "rojo","verde"],
-		"oferta": true,
-		"descuento": 15,
-		"imagen": "http://libbys.es/wordpress/wp-content/uploads/2018/05/fresas.jpg",
-		"cantidad": 1 
-  },
-  {
-		"nombre": "Kiwi",
-		"precio": 1.25,
-		"calorias": 100,
-		"colores": ["amarillo","marron","verde"],
-		"oferta": false,
-		"descuento": 0,
-		"imagen": "https://www.abc.es/media/familia/2018/04/03/kiwi-kC0--620x349@abc.jpg",
-		"cantidad": 1 
-  },
-  {
-		"nombre": "Limon",
-		"precio": 0.80,
-		"calorias": 0.35,
-		"colores": ["amarillo","verde"],
-		"oferta": true,
-		"descuento": 10,
-		"imagen": "https://www.hogarmania.com/archivos/201308/limon-xl-668x400x80xX.jpg",
-		"cantidad": 1 
-	}
-]
+  ]
 }

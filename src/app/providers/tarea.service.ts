@@ -22,13 +22,41 @@ export class TareaService {
     return this.http.get( this.endpoint );
   }
 
-  delete(t:Tarea): Observable<any> {
-    console.trace(`TareaService delete ${this.endpoint}`);
-    //this.tareas=this.getAll();
-    const index: number = this.tareas.indexOf(t);
-    this.tareas.splice(index, 1);
-   
-    return this.http.get( this.endpoint );
+  add(tarea:Tarea):Observable<any>{
+   console.log("add tareaService %o" ,tarea);
+   let body = {
+      "titulo":tarea.titulo,
+      "terminado": tarea.terminado
+   };
+
+   const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json'
+    })
+  }; 
+    return this.http.post(this.endpoint,body,httpOptions);
+  }
+
+  delete(id:number): Observable<any> {
+    let uri=this.endpoint +"/" +id;
+    console.trace(`TareaService delete ${uri}`);   
+    return this.http.delete( uri );
+  }
+
+  marcarTerminado(tarea:Tarea):Observable<any>{
+    let uri=this.endpoint +"/" +tarea.id;
+    console.trace(`TareaService marcarTerminado ${uri}`); 
+
+    let body = {      
+      "terminado": !tarea.terminado
+   };
+
+   const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };  
+    return this.http.patch( uri, body,httpOptions);
   }
 
 
