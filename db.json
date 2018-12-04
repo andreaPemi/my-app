@@ -1,11 +1,6 @@
 {
   "tareas": [
     {
-      "titulo": "5",
-      "terminado": false,
-      "id": 7
-    },
-    {
       "titulo": "mirar angular 2 materia",
       "terminado": false,
       "id": 8
@@ -18,6 +13,7 @@
   ],
   "frutas": [
     {
+      "id": 1,
       "nombre": "banana",
       "precio": 3.15,
       "calorias": 500,
@@ -31,6 +27,7 @@
       "cantidad": 1
     },
     {
+      "id": 2,
       "nombre": "pera",
       "precio": 2,
       "calorias": 350,
@@ -44,6 +41,7 @@
       "cantidad": 1
     },
     {
+      "id": 3,
       "nombre": "fresa",
       "precio": 0.75,
       "calorias": 100,
@@ -58,6 +56,7 @@
       "cantidad": 1
     },
     {
+      "id": 4,
       "nombre": "Kiwi",
       "precio": 1.25,
       "calorias": 100,
@@ -72,6 +71,7 @@
       "cantidad": 1
     },
     {
+      "id": 5,
       "nombre": "Limon",
       "precio": 0.8,
       "calorias": 0.35,
@@ -83,6 +83,113 @@
       "descuento": 10,
       "imagen": "https://www.hogarmania.com/archivos/201308/limon-xl-668x400x80xX.jpg",
       "cantidad": 1
+    },
+    {
+      "nombre": "higo",
+      "precio": 3.15,
+      "id": 6
+    },
+    {
+      "nombre": "aceitunas",
+      "precio": 3.5,
+      "id": 7
+    },
+    {
+      "nombre": "altramuces",
+      "precio": 0.89,
+      "id": 8
+    },
+    {
+      "nombre": "coco",
+      "precio": 3.65,
+      "id": 9
+    },
+    {
+      "nombre": "",
+      "precio": 3.15,
+      "id": 10
+    },
+    {
+      "nombre": "",
+      "precio": 12.67,
+      "id": 11
+    },
+    {
+      "nombre": "tomate",
+      "precio": 0.89,
+      "id": 12
+    },
+    {
+      "nombre": "aa",
+      "precio": "33",
+      "calorias": "33",
+      "colores": [
+        "rojo"
+      ],
+      "oferta": "rr",
+      "descuento": "",
+      "imagen": "",
+      "cantidad": "",
+      "id": 13
+    },
+    {
+      "nombre": "tomate",
+      "precio": 0.89,
+      "id": 14
+    },
+    {
+      "nombre": "tomate",
+      "precio": 0.89,
+      "id": 15
+    },
+    {
+      "nombre": "uva",
+      "precio": 22,
+      "id": 16
+    },
+    {
+      "nombre": "aa",
+      "precio": "33",
+      "calorias": "33",
+      "colores": [
+        "rojo"
+      ],
+      "oferta": "rr",
+      "descuento": "",
+      "imagen": "",
+      "cantidad": "",
+      "id": 17
+    },
+    {
+      "nombre": "rabano",
+      "precio": 1,
+      "id": 18
+    },
+    {
+      "nombre": "pepino",
+      "precio": 2.56,
+      "calorias": 12,
+      "colores": [
+        "verde"
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "imagen": "",
+      "cantidad": 1,
+      "id": 19
+    },
+    {
+      "nombre": "kiwi",
+      "precio": 11,
+      "calorias": 12,
+      "colores": [
+        "verde"
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "imagen": "",
+      "cantidad": 3,
+      "id": 20
     }
   ]
 }

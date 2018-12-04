@@ -1,5 +1,5 @@
 export class Fruta {
-    private _idFruta: number;  
+    private _id: number;  
     private _nombre: string;    
     private _precio: number;    
     private _calorias: number;    
@@ -20,11 +20,11 @@ export class Fruta {
         this.cantidad=1;
     }
     
-    public get idFruta(): number {
-        return this._idFruta;
+    public get id(): number {
+        return this._id;
     }
-    public set idFruta(value: number) {
-        this._idFruta = value;
+    public set id(value: number) {
+        this._id = value;
     }
     public get nombre(): string {
         return this._nombre;

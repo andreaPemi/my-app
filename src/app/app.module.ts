@@ -2,7 +2,8 @@
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { FrutaejercicioComponent } from './components/frutaejercicio/frutaejerci
 import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
 import { ComparadorComponent } from './components/comparador/comparador.component';
 import { TareaComponent } from './components/tarea/tarea.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 //Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
@@ -27,9 +29,6 @@ import { TareasPipe } from './pipes/tareas.pipe';
 //Providers
 import { FrutaService } from './providers/fruta.service';
 import { TareaService } from './providers/tarea.service';
-
-
-
 
 @NgModule({
   declarations: [
@@ -47,14 +46,16 @@ import { TareaService } from './providers/tarea.service';
     FrutaCardComponent,
     ComparadorComponent,
     TareaComponent,
-    TareasPipe
+    TareasPipe,
+    FormularioComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule, // cargamos el módulo en el array de imports
+    FormsModule, //banana in a box(ngModule)
+    ReactiveFormsModule,
+    HttpClientModule, // peticiones http
   ],
   providers: [
     FrutaService,

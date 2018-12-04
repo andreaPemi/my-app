@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Fruta } from '../model/fruta';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +16,28 @@ export class FrutaService {
   getAll(): Observable<any> {
     console.trace(`FrutaService getAll ${this.endpoint}`);
     return this.http.get( this.endpoint);
-  }  
+  } 
+  
+  add(fruta:Fruta):Observable<any>{
+    console.log("add frutaService %o" ,fruta);
+    let body = {
+      "nombre": fruta.nombre,
+      "precio": fruta.precio,
+      "calorias": fruta.calorias,
+      "colores": [
+        fruta.colores
+      ],
+      "oferta": fruta.oferta,
+      "descuento": fruta.descuento,
+      "imagen": fruta.imagen,
+      "cantidad": fruta.cantidad
+    };
+ 
+    const httpOptions = {
+     headers: new HttpHeaders({
+       'Content-Type':  'application/json'
+     })
+   }; 
+     return this.http.post(this.endpoint,body,httpOptions);
+   }
 }
