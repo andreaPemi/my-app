@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class FrutaService {
+ 
   endpoint: string = 'http://localhost:3000/frutas';
   
   constructor(public http: HttpClient ) { 
@@ -40,4 +41,19 @@ export class FrutaService {
    }; 
      return this.http.post(this.endpoint,body,httpOptions);
    }
+
+   delete(id:number): Observable<any> {
+    
+    let uri=this.endpoint +"/" +id;
+    console.trace(`frutaService delete ${uri}`);   
+    return this.http.get( uri );
+  }
+  
+
+  getById(id:number):Observable<any> {
+    
+    let uri=this.endpoint +"/" +id;
+    console.trace(`frutaService getById ${uri}`);   
+    return this.http.get( uri );
+  }
 }

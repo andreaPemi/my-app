@@ -20,6 +20,7 @@ import { FrutaCardComponent } from './components/fruta-card/fruta-card.component
 import { ComparadorComponent } from './components/comparador/comparador.component';
 import { TareaComponent } from './components/tarea/tarea.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { CrudFrutaComponent } from './components/crud-fruta/crud-fruta.component';
 
 //Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
@@ -29,6 +30,7 @@ import { TareasPipe } from './pipes/tareas.pipe';
 //Providers
 import { FrutaService } from './providers/fruta.service';
 import { TareaService } from './providers/tarea.service';
+import { DetalleFrutaComponent } from './components/detalle-fruta/detalle-fruta.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { TareaService } from './providers/tarea.service';
     ComparadorComponent,
     TareaComponent,
     TareasPipe,
-    FormularioComponent
+    FormularioComponent,
+    CrudFrutaComponent,
+    DetalleFrutaComponent
     
   ],
   imports: [

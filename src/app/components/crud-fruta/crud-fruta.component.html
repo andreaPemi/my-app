@@ -1,0 +1,30 @@
+<h1 class="text-center">CRUD de FRUTA</h1>
+
+
+<table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Calorias</th>
+            <th scope="col">Colores</th>
+            <th scope="col">Oferta</th>
+            <th scope="col">Descuento</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let f of frutas">            
+            <td>{{f.nombre}}</td>
+            <td>{{f.precio}}</td>
+            <td>{{f.calorias}}</td>
+            <td>{{f.colores}}</td>
+            <td>{{f.oferta}}</td>
+            <td>{{f.descuento}}</td>
+            <td>{{f.imagen}}</td>
+            <td>{{f.cantidad}}</td>
+          </tr>          
+        </tbody>
+      </table>
+
