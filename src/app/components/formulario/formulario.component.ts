@@ -12,6 +12,7 @@ export class FormularioComponent implements OnInit {
   simple: FormControl;         //control o input del formulario
   formulario: FormGroup;      //Formulario para agrupar inputs(formControl)
   msg: string;
+  
 
   constructor(public frutaService: FrutaService) {
     console.log("FormularioComponent constructor");
@@ -31,14 +32,14 @@ export class FormularioComponent implements OnInit {
       precio: new FormControl(
         1, //valor inicial
         [Validators.required,
-        Validators.minLength(1),
-        Validators.maxLength(2)]
+        Validators.min(0.1),
+        Validators.max(999)]
       ),
       calorias: new FormControl(0),
       colores: new FormControl(""),
       oferta: new FormControl(false),
-      descuento: new FormControl(0),
-      imagen: new FormControl(""),
+      descuento: new FormControl(5, [Validators.min(5),Validators.max(90)]),
+      imagen: new FormControl("",[Validators.required,Validators.pattern('^(http(s?):\/\/).+(\.(png|jpg|jpeg))$')]),
       cantidad: new FormControl(0)
     });
   }

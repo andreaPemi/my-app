@@ -43,7 +43,7 @@
             <div class="form-group row">
               <label class="col-sm-2 col-form-label">Precio</label>
               <div class="col-sm-10">
-                <input type="number" formControlName="precio">
+                <input type="number" formControlName="precio" min="0.1" max="999" step="0.1">
                 <small *ngIf="formulario.controls.precio.invalid"class="form-text text-danger">indica el precio</small>
               </div>
             </div> 
@@ -68,19 +68,29 @@
                   <input type="checkbox" formControlName="oferta">
                 </div>
             </div>
-    
-            <div class="form-group row">
+            <div [hidden]="!formulario.controls.oferta.value">
+              <div class="form-group row">              
                 <label class="col-sm-2 col-form-label">Descuento</label>
                 <div class="col-sm-10">
-                  <input type="number" formControlName="descuento">
+                  <input type="number" [readonly]="!formulario.controls.oferta.value" formControlName="descuento" step="5" min="5" max="90">
+                  <small *ngIf="formulario.controls.descuento.invalid"class="form-text text-danger">Min 5% Max 90%</small>
                 </div>
+              </div>
              </div>
     
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Imagen</label>
-                <div class="col-sm-10">
-                  <input type="text" formControlName="imagen">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img src="{{formulario.controls.imagen.value}}" alt="imagen producto">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" formControlName="imagen" placeholder="Url imagen, extensiones .jng p .jp(e)g" >
+
+                    </div>
                 </div>
+                
+                
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">cantidad</label>
