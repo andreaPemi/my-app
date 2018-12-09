@@ -57,4 +57,31 @@ export class FrutaService {
     console.trace(`frutaService getById ${uri}`);   
     return this.http.get( uri );
   }
+
+  update(fruta : Fruta): Observable <any>{
+    console.log("Modifcar frutaService %o"+fruta);
+    const uri = this.endpoint + '/' + fruta.id;
+
+    let body = {
+      "nombre": fruta.nombre,
+      "precio": fruta.precio,
+      "calorias": fruta.calorias,
+      "colores": [
+        fruta.colores
+      ],
+      "oferta": fruta.oferta,
+      "descuento": fruta.descuento,
+      "imagen": fruta.imagen,
+      "cantidad": fruta.cantidad
+    };
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Context-Type': 'application/json'
+      })
+      
+    };
+    
+    return this.http.put(uri,body);
+    
+  }
 }

@@ -27,19 +27,17 @@
       "cantidad": 1
     },
     {
-      "id": 3,
-      "nombre": "fresa",
+      "nombre": "fresa modificada",
       "precio": 0.75,
       "calorias": 100,
       "colores": [
-        "rosa",
-        "rojo",
-        "verde"
+        []
       ],
       "oferta": true,
       "descuento": 15,
       "imagen": "http://libbys.es/wordpress/wp-content/uploads/2018/05/fresas.jpg",
-      "cantidad": 1
+      "cantidad": 1,
+      "id": 3
     },
     {
       "id": 5,
