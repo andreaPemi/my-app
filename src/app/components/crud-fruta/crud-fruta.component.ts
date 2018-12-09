@@ -10,16 +10,15 @@ import { ActivatedRoute } from '../../../../node_modules/@angular/router';
 })
 export class CrudFrutaComponent implements OnInit {
 
-  frutas:Fruta[];
-  formulario: FormGroup;
+  frutas:Fruta[];  
 
-  constructor(public frutaService:FrutaService ,private route: ActivatedRoute) { }
+  constructor(public frutaService:FrutaService ,private route: ActivatedRoute) { 
+    this.frutas=[];
+  }
 
   ngOnInit() {
     //listar
-    this.frutaService.getAll().subscribe(data=>{
-      this.frutas=data.map(el=>el);      
-    })
+    this.cargarLista();
 
     //Ir detalle    
     this.route.params.subscribe(params => {
@@ -29,29 +28,22 @@ export class CrudFrutaComponent implements OnInit {
    });
   }
 
-  crear() {
-    console.log("crear fruta" + this.formulario);
+  cargarLista(){
 
-    let fruta = new Fruta();
+    this.frutaService.getAll().subscribe(data => {
+      console.log('Datos recibidos $%o', data);
+      this.frutas = data.map(el => el);
+    });
 
-    fruta.nombre = this.formulario.controls.nombre.value;
-    fruta.precio = this.formulario.controls.precio.value;
-    fruta.calorias = this.formulario.controls.calorias.value;
-    fruta.colores = this.formulario.controls.colores.value;
-    fruta.oferta = this.formulario.controls.oferta.value;
-    fruta.descuento = this.formulario.controls.descuento.value;
-    fruta.imagen = this.formulario.controls.imagen.value;
-    fruta.cantidad = this.formulario.controls.cantidad.value;
-
-    if (this.frutaService.add(fruta).subscribe(data => {
-      console.log(data);
-      console.debug("fruta creada: %o", data);
-    })) {
-     // this.msg = "Fruta registrada correctamente";
-    }
   }
 
-  
+  eliminar(id:number){
+    console.log('index a borrar: ', id);
+    this.frutaService.delete(id).subscribe(data =>{
+      console.log('data %o', data);
+      this.cargarLista();
+      });
 
+  }
 
 }

@@ -45,8 +45,9 @@ export class FrutaService {
    delete(id:number): Observable<any> {
     
     let uri=this.endpoint +"/" +id;
-    console.trace(`frutaService delete ${uri}`);   
-    return this.http.get( uri );
+    console.log(`frutAService delete :${uri}`);   
+
+    return this.http.delete(uri);
   }
   
 

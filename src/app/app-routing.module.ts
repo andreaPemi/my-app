@@ -25,7 +25,8 @@ const routes: Routes = [
   {path:'tareas', component:TareaComponent}, 
   {path:'formulario', component:FormularioComponent}, 
   { path: 'detalle/:id', component: DetalleFrutaComponent},
-  {path:'fruta-crud', component:CrudFrutaComponent}, 
+  {path:'fruta-crud', component:CrudFrutaComponent},
+  {path:'detalle', component:DetalleFrutaComponent},  
   {path:'',redirectTo: '/home', pathMatch: 'full'},
   {path:'**', component:Page404Component}
 ];

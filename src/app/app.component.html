@@ -17,12 +17,9 @@
         </li>
         <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" routerLink="pipe" >Pipes o filtro</a>
-        </li>
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" routerLink="fruta-ejercicio" >Ejercicio frutas</a>
-      </li>
+        </li>       
       <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" routerLink="comparador" >Comparador de frutas</a>
+          
       </li>
       <li class="nav-item" routerLinkActive="active">
           <a class="nav-link" routerLink="tareas">tareas </a>
@@ -31,15 +28,35 @@
           <a class="nav-link" routerLink="formulario">formulario </a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" routerLink="fruta-crud">crud Fruta </a>
+          
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        
+    </li>
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ejercicios Fruta
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="nav-link" routerLink="fruta-ejercicio" >Ejercicio frutas</a>
+            <div class="dropdown-divider"></div>
+            <a class="nav-link" routerLink="comparador" >Comparador de frutas</a>
+            <div class="dropdown-divider"></div>
+            <a class="nav-link" routerLink="fruta-crud">crud Fruta </a>
+            <div class="dropdown-divider"></div>
+            <a class="nav-link" routerLink="detalle">Detalle Fruta </a>
+        </div>
       </li>
       </ul>      
     </div>
   </nav>
-<main class="container"> 
+
 
   
 
 <!-- Encargado de cambiar cada componente en funcion de la ruta-->
-    <router-outlet></router-outlet>
-</main>   
+<div class="container main-container">
+    <router-outlet></router-outlet>  
+</div>
+  

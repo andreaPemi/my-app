@@ -42,21 +42,6 @@
       "cantidad": 1
     },
     {
-      "id": 4,
-      "nombre": "Kiwi",
-      "precio": 1.25,
-      "calorias": 100,
-      "colores": [
-        "amarillo",
-        "marron",
-        "verde"
-      ],
-      "oferta": false,
-      "descuento": 0,
-      "imagen": "https://www.abc.es/media/familia/2018/04/03/kiwi-kC0--620x349@abc.jpg",
-      "cantidad": 1
-    },
-    {
       "id": 5,
       "nombre": "Limon",
       "precio": 0.8,
@@ -69,11 +54,6 @@
       "descuento": 10,
       "imagen": "https://www.hogarmania.com/archivos/201308/limon-xl-668x400x80xX.jpg",
       "cantidad": 1
-    },
-    {
-      "nombre": "coco",
-      "precio": 3.65,
-      "id": 9
     }
   ]
 }
