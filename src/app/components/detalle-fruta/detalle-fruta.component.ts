@@ -115,7 +115,7 @@ export class DetalleFrutaComponent implements OnInit {
     fruta.nombre = this.formulario.controls.nombre.value;
     fruta.precio = this.formulario.controls.precio.value;
     fruta.calorias = this.formulario.controls.calorias.value;
-    //fruta.colores = this.formulario.controls.colores.value;
+    fruta.colores = this.formulario.controls.colores.value;
     fruta.oferta = this.formulario.controls.oferta.value;
     fruta.descuento = this.formulario.controls.descuento.value;
     fruta.imagen = this.formulario.controls.imagen.value;
