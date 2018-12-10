@@ -19,6 +19,9 @@ import { ComparadorComponent } from './components/comparador/comparador.componen
 import { TareaComponent } from './components/tarea/tarea.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { CrudFrutaComponent } from './components/crud-fruta/crud-fruta.component';
+import { DetalleFrutaComponent } from './components/detalle-fruta/detalle-fruta.component';
+import { BackofficeComponent } from './components/backoffice/backoffice.component';
+import { LoginComponent } from './components/login/login.component';
 
 //Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
@@ -28,7 +31,11 @@ import { TareasPipe } from './pipes/tareas.pipe';
 //Providers
 import { FrutaService } from './providers/fruta.service';
 import { TareaService } from './providers/tarea.service';
-import { DetalleFrutaComponent } from './components/detalle-fruta/detalle-fruta.component';
+import { LoginService } from './providers/login.service';
+
+
+//Guards
+import { BackofficeGuard } from './guards/backoffice.guard';
 
 @NgModule({
   declarations: [
@@ -49,7 +56,9 @@ import { DetalleFrutaComponent } from './components/detalle-fruta/detalle-fruta.
     TareasPipe,
     FormularioComponent,
     CrudFrutaComponent,
-    DetalleFrutaComponent
+    DetalleFrutaComponent,
+    BackofficeComponent,
+    LoginComponent
     
   ],
   imports: [
@@ -61,7 +70,9 @@ import { DetalleFrutaComponent } from './components/detalle-fruta/detalle-fruta.
   ],
   providers: [
     FrutaService,
-    TareaService
+    TareaService,
+    LoginService,
+    BackofficeGuard
   ],
   bootstrap: [AppComponent]
 })

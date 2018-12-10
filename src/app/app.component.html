@@ -26,13 +26,7 @@
       </li>
       <li class="nav-item" routerLinkActive="active">
           <a class="nav-link" routerLink="formulario">formulario </a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-          
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        
-    </li>
+      </li>     
 
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -47,6 +41,17 @@
             <div class="dropdown-divider"></div>
             <a class="nav-link" [routerLink]="['../detalle', -1]">Detalle Fruta </a>
         </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Guards
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="nav-link text-danger" routerLink="privado" >Zona privada</a>
+            <a class="nav-link text-danger" routerLink="login" >login</a>
+       
+        </div>
+        
       </li>
       </ul>      
     </div>
